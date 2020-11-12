@@ -1,3 +1,67 @@
+# Web-FloweltoShop
+
+TBA
+
+
+## Contributors
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://AVM-Martin.my.id/">
+        <img src="https://github.com/AVM-Martin.png" width="100px;" alt=""/><br />
+        <sub><b>Andreas Martin</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/ekeitaro/">
+        <img src="https://github.com/ekeitaro.png" width="100px;" alt=""/><br />
+        <sub><b>Edward Keitaro</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+## Creative Thinking
+
+  * *TBA*
+
+
+## Deployment
+
+  * Create MySQL database named `TBA` on `127.0.0.1:3306` with `root` username and no password. You can customize the ip address, port, database username or password based on your own machine setup.
+  * Run `composer install` to download all dependencies needed.
+  * Run `cp .env.example .env && php artisan key:generate` to prepare all important data.
+  * Run `php artisan migrate --seed` to create and fill the database.
+  * Run `php artisan serve` and access the webapp on localhost port 8000.
+
+
+## References
+
+Here a list of URLs that had been accessed and (maybe) give some insights to this project
+
+  * [Laravel Blade Documentation](https://laravel.com/docs/7.x/blade)
+
+
+## Useful Information
+
+(Maybe) Unrelated, but could be related in the future
+
+  * *TBA*
+
+
+## Image Resources
+
+  * https://outerbloom.com/
+  * https://madameflorist.com/
+  * https://www.1800flowers.com/
+  * https://www.flowerstudio.co.id/
+  * https://www.fiftyflowers.com/
+
+
+<hr/>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
