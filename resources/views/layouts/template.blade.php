@@ -13,7 +13,13 @@
     @section('header')
     @show
 
-    @section('content')
+    <div>
+        @yield('content')
+    </div>
+
+    @section('footer')
+        @include('components.footer')
     @show
+    
 </body>
 </html>

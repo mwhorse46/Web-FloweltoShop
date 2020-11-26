@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('header')
-    @include('components.header')
+    <x-header />
 @endsection
 
 @section('content')
