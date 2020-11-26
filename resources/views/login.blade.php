@@ -9,7 +9,7 @@
         <div class="d-flex justify-content-center m-3">
             <h4>Login</h4>
         </div>
-        <div class="m-4 px-3">
+        <div class="m-3 px-3" style="max-width:500px">
             <form>
                 <div class="form-group row">
                     <label for="txtEmail" class="col-sm-4 col-form-label">Email Address</label>
