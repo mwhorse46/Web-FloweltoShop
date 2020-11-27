@@ -16,7 +16,10 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Manager</a>
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Register</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">{{ date("D, d M Y") }}</a>
