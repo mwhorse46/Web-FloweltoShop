@@ -30,7 +30,7 @@ TBA
 
 ## Deployment
 
-  * Create MySQL database named `TBA` on `127.0.0.1:3306` with `root` username and no password. You can customize the ip address, port, database username or password based on your own machine setup.
+  * Create MySQL database named `floweltoshop` on `127.0.0.1:3306` with `root` username and no password. You can customize the ip address, port, database username or password based on your own machine setup.
   * Run `composer install` to download all dependencies needed.
   * Run `cp .env.example .env && php artisan key:generate` to prepare all important data.
   * Run `php artisan migrate --seed` to create and fill the database.
