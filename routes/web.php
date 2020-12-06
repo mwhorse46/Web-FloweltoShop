@@ -29,3 +29,7 @@ Route::get('/view', function() {
     return view('view-product');
 });
 
+Route::get('/update', function() {
+    return view('update-product');
+});
+
