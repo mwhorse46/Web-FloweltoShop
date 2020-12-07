@@ -1,12 +1,10 @@
-<div class="col-xs-12 col-md-5 m-1" style="max-width:400px; background-color:#FE8AD7">
-    <div class="h-100">
-        <a href="#">
-            <div class="p-1">
-                <img src="" alt="NO IMAGE">
-            </div>
-            <div class="text-center" style="color: black;">
-                <h5>Hand Bouquet</h5>
-            </div>
-        </a>
+<div class="col mb-4">
+  <a class="text-decoration-none text-body" href="#">
+    <div class="card h-100 text-center border border-primary">
+      <img src="{{ url(Storage::url('random.jpg')) }}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Hand Bouquet</h5>
+      </div>
     </div>
+  </a>
 </div>

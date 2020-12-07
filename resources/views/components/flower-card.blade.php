@@ -1,27 +1,29 @@
-<div class="col-3 col-xs-12 col-sm-6 m-2 border border-primary" style="max-width: 350px;">
-    <div class="text-center">
-        <a href="#">
-            <div class="p-1">
-                <img src="" alt="NO IMAGE">
+<div class="col mb-4">
+  <a class="text-decoration-none text-body" href="#">
+    <div class="card h-100 text-center border border-primary">
+      <img src="{{ url(Storage::url('random.jpg')) }}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Aurora Flower</h5>
+        <div class="card-subtitle">Rp 80000</div>
+      </div>
+
+      @auth
+      @else
+        <div class="card-footer container-fluid">
+          <div class="row">
+            <div class="col mx-1">
+              <a class="btn btn-danger" href="#1">
+                Delete Flower
+              </a>
             </div>
-            <div class="my-2" style="color: black;">
-                <div>
-                    <h5>Aurora Flower</h5>
-                </div>
-                <div>
-                    <h6>Rp 80000</h6>
-                </div>
+            <div class="col mx-1">
+              <a class="btn btn-primary" href="#2">
+                Update Flower
+              </a>
             </div>
-        </a>
-        <div class="py-2">
-            <div class="row row-cols-2" style="min-width: 280px;">
-                <div>
-                    <button class="btn btn-danger">Delete Flower</button>
-                </div>
-                <div>
-                    <button class="btn btn-primary">Update Flower</button>
-                </div>
-            </div>
+          </div>
         </div>
+      @endauth
     </div>
+  </a>
 </div>

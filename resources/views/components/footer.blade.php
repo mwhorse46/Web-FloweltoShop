@@ -1,3 +1,5 @@
-<div class="d-flex justify-content-center m-5 pt-5">
-    &copy; <?php echo date ('Y'); ?> by Flowelto Shop
-</div>
+<nav class="navbar navbar-expand-lg navbar-light mt-5">
+  <span class="navbar-text mx-auto">
+    Copyright &copy; 2020 by {{ config('app.name', 'Laravel') }}
+  </span>
+</nav>
