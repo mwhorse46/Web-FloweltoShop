@@ -12,28 +12,28 @@
           <label for="txtUsername" class="col-xs-12 col-lg-4 col-form-label">
             Username
           </label>
-          <input type="text" class="col-xs-12 col-lg-7 form-control mx-3" id="txtUsername">
+          <input type="text" class="col-xs-12 col-lg-7 mx-3 form-control" id="txtUsername">
         </div>
 
         <div class="form-group row">
           <label for="txtEmail" class="col-xs-12 col-lg-4 col-form-label">
             Email Address
           </label>
-          <input type="email" class="col-xs-12 col-lg-7 form-control mx-3" id="txtEmail">
+          <input type="email" class="col-xs-12 col-lg-7 mx-3 form-control" id="txtEmail">
         </div>
 
         <div class="form-group row">
           <label for="txtPassword" class="col-xs-12 col-lg-4 col-form-label">
             Password
           </label>
-          <input type="password" class="col-xs-12 col-lg-7 form-control mx-3" id="txtPassword">
+          <input type="password" class="col-xs-12 col-lg-7 mx-3 form-control" id="txtPassword">
         </div>
 
         <div class="form-group row">
           <label for="txtConfirmPassword" class="col-xs-12 col-lg-4 col-form-label">
             Confirm Password
           </label>
-          <input type="password" class="col-xs-12 col-lg-7 form-control mx-3" id="txtConfirmPassword">
+          <input type="password" class="col-xs-12 col-lg-7 mx-3 form-control" id="txtConfirmPassword">
         </div>
 
         <div class="form-group row">
@@ -60,14 +60,14 @@
           <label for="txtBirth" class="col-xs-12 col-lg-4 col-form-label">
             Date of Birth
           </label>
-          <input type="text" class="col-xs-12 col-lg-7 form-control mx-3" id="txtBirth" placeholder="mm/dd/yyyy">
+          <input type="text" class="col-xs-12 col-lg-7 mx-3 form-control" id="txtBirth" placeholder="mm/dd/yyyy">
         </div>
 
         <div class="form-group row">
           <label for="txtAddress" class="col-xs-12 col-lg-4 col-form-label">
             Address
           </label>
-          <textarea class="col-xs-12 col-lg-7 form-control mx-3" id="txtAddress" rows="3"></textarea>
+          <textarea class="col-xs-12 col-lg-7 mx-3 form-control" id="txtAddress" rows="3"></textarea>
         </div>
 
         <div class="row">
