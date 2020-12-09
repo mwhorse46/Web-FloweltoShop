@@ -72,6 +72,6 @@ Route::get('/laravel', function() {
 });
 
 Route::get('/test', function() {
-    return view('transaction/cart');
+    return view('account');
 });
 
