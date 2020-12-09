@@ -70,3 +70,8 @@ Route::group(['prefix' => 'transaction', 'as' => 'transaction.'], function () {
 Route::get('/laravel', function() {
     return view('welcome');
 });
+
+Route::get('/test', function() {
+    return view('transaction/cart');
+});
+
