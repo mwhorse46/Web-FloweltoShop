@@ -42,6 +42,7 @@ TBA
 Here a list of URLs that had been accessed and (maybe) give some insights to this project
 
   * [Laravel Blade Documentation](https://laravel.com/docs/7.x/blade)
+  * [Inline Radio Button](https://stackoverflow.com/questions/49797169/multiple-radio-buttons-on-one-line-bootstrap-4/49797531)
 
 
 ## Useful Information
