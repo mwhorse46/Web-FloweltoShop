@@ -18,6 +18,8 @@ class CreateHeaderTransactionsTable extends Migration
             $table->date('date')->nullable();
 
             $table->foreignId('user_id')->constrained('users');
+
+            $table->timestamps();
         });
     }
 

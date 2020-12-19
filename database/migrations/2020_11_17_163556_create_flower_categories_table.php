@@ -17,6 +17,8 @@ class CreateFlowerCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('image');
+
+            $table->timestamps();
         });
     }
 

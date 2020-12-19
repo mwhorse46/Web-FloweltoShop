@@ -21,6 +21,8 @@ class CreateFlowersTable extends Migration
             $table->text('image');
 
             $table->foreignId('category_id')->constrained('flower_categories');
+
+            $table->timestamps();
         });
     }
 

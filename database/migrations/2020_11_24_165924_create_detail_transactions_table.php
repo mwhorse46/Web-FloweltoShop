@@ -24,6 +24,8 @@ class CreateDetailTransactionsTable extends Migration
                 ->nullable()
                 ->constrained('flowers')
                 ->onDelete('set null');
+
+            $table->timestamps();
         });
     }
 
