@@ -43,6 +43,10 @@ Here a list of URLs that had been accessed and (maybe) give some insights to thi
 
   * [Laravel Blade Documentation](https://laravel.com/docs/7.x/blade)
   * [Inline Radio Button](https://stackoverflow.com/questions/49797169/multiple-radio-buttons-on-one-line-bootstrap-4/49797531)
+  * [Catatan Laravel :: Upload Image Via Laravel Storage](https://alfinchandra4.medium.com/catatan-laravel-upload-imagevia-laravel-storage-379a1dc9373)
+  * [Sharing Data With All Views](https://laravel.com/docs/8.x/views#sharing-data-with-all-views)
+  * [Password Validation with Rules](https://www.itsolutionstuff.com/post/laravel-change-password-with-current-password-validation-exampleexample.html)
+  * [Remember Logged-In User](https://laravel.com/docs/7.x/authentication#remembering-users()
 
 
 ## Useful Information
