@@ -11,9 +11,9 @@
     </div>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 mt-3 justify-content-center">
-      @for ($i = 0; $i < 10; $i++)
-        <x-flower-menu-card />
-      @endfor
+      @foreach ($categories as $category)
+        @include('components.flower-menu-card', [ 'category' => $category ])
+      @endforeach
     </div>
   </div>
 @endsection

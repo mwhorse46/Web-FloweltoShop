@@ -7,23 +7,17 @@
         <img src="{{ url(Storage::url('random.jpg')) }}" alt="NO IMAGE">
       </div>
       <div class="col-xs-12 col-md-9">
-        <div class="h3">
-          Aurora Flower
-        </div>
-        <div class="h5">
-          Rp 80000
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, reprehenderit deleniti. Natus voluptate maiores incidunt debitis, perferendis ab consectetur accusamus sed assumenda maxime omnis ea amet soluta saepe! Enim, eum?
-        </div>
+        <div class="h3">{{ $flower->name }}</div>
+        <div class="h5">Rp {{ $flower->price }}</div>
+        <div>{{ $flower->description }}</div>
 
-        @auth
-        @else
-        <div class="mt-5 pt-2">
-          <form>
+        @cannot('is_admin', $flower)
+          <form class="mt-5 pt-2" action="#">
+            {{-- TODO --}}
+            @csrf
             <div class="form-group row">
               <label for="txtQuantity" class="col-xs-12 col-lg-2 col-form-label">Quantity</label>
-              <input type="number" class="col-xs-12 col-lg-2 mx-3 form-control" id="txtQuantity" MIN="1">
+              <input type="number" class="col-xs-12 col-lg-2 mx-3 form-control" id="txtQuantity" value="1" name="qty">
               <div class="col-xs-0 col-lg-5"></div>
             </div>
             <div class="row">
@@ -32,8 +26,7 @@
               <div class="col-xs-0 col-lg-5"></div>
             </div>
           </form>
-        </div>
-        @endauth
+        @endcannot
       </div>
     </div>
   </div>

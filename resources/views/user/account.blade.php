@@ -7,26 +7,27 @@
     </div>
 
     <div class="row row-cols-xs-1 row-cols-md-2 justify-content-center">
-      <form class="p-1" style="max-width:500px;">
+      <form class="p-1" style="max-width:500px;" action="{{ route('changePassword') }}" method="post">
+        @csrf
         <div class="form-group row">
           <label for="txtOldPassword" class="col-xs-12 col-lg-5 col-form-label">
             Old Password
           </label>
-          <input type="password" class="col-xs-12 col-lg-6 mx-3 form-control" id="txtOldPassword">
+          <input type="password" class="col-xs-12 col-lg-6 mx-3 form-control" id="txtOldPassword" name="oldPassword">
         </div>
 
         <div class="form-group row">
           <label for="txtNewPassword" class="col-xs-12 col-lg-5 col-form-label">
             New Password
           </label>
-          <input type="password" class="col-xs-12 col-lg-6 mx-3 form-control" id="txtNewPassword">
+          <input type="password" class="col-xs-12 col-lg-6 mx-3 form-control" id="txtNewPassword" name="password">
         </div>
 
         <div class="form-group row">
           <label for="txtConfirmNewPassword" class="col-xs-12 col-lg-5 col-form-label">
             Confirm New Password
           </label>
-          <input type="password" class="col-xs-12 col-lg-6 mx-3 form-control" id="txtConfirmNewPassword">
+          <input type="password" class="col-xs-12 col-lg-6 mx-3 form-control" id="txtConfirmNewPassword" name="password_confirmation">
         </div>
 
         <div class="row">

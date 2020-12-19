@@ -3,7 +3,7 @@
 @section('content')
   <div class="container p-3">
     <div class="h1 text-center">
-      Our Hand Bouquet (gift)
+      Our {{ $category->name }}
     </div>
 
     <div class="mt-2 pt-2">
@@ -26,9 +26,9 @@
     </div>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 mt-2 justify-content-center">
-      @for ($i = 0; $i < 10; $i++)
-        <x-flower-card />
-      @endfor
+      @foreach ($flowers as $flower)
+        @include('components.flower-card', [ 'flower' => $flower ])
+      @endforeach
     </div>
   </div>
 @endsection

@@ -13,65 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', 'PageController@home')->name('home');
 
-Route::get('/login', function() {
-    return view('login');
-})->name('login');
+Route::group([ 'prefix' => 'user', 'middleware' => 'guest' ], function () {
+    Route::get('/register', 'UserController@showRegisterForm')->name('user.register');
+    Route::post('/register', 'UserController@register')->name('register');
 
-Route::get('/register', function() {
-    return view('register');
-})->name('register');
+    Route::get('/login', 'UserController@showLoginForm')->name('user.login');
+    Route::post('/login', 'UserController@login')->name('login');
+});
+Route::group([ 'prefix' => 'user', 'middleware' => 'auth' ], function() {
+    Route::get('/changepassword', 'UserController@showPasswordForm')->name('user.password');
+    Route::post('/changepassword', 'UserController@change')->name('changePassword');
 
-Route::group(['prefix' => 'category', 'as' => 'category.'], function () {
-    Route::get('/', function() {
-        return view('category/index');
-    })->name('index');
-
-    Route::get('/{id}', function() {
-        return view('category/show');
-    })->name('show');
-
-    Route::get('/{id}/edit', function() {
-        return view('category/edit');
-    })->name('edit');
+    Route::get('/logout', 'UserController@logout')->name('user.logout');
 });
 
-Route::group(['prefix' => 'flower', 'as' => 'flower.'], function () {
-    Route::get('/', function() {
-        return view('flower/index');
-    })->name('index');
+Route::resource('/category', 'FlowerCategoryController');
+Route::resource('/flower', 'FlowerController');
 
-    Route::get('/{id}', function() {
-        return view('flower/show');
-    })->name('show');
-
-    Route::get('/{id}/edit', function() {
-        return view('flower/edit');
-    })->name('edit');
-});
-
-Route::group(['prefix' => 'transaction', 'as' => 'transaction.'], function () {
-    Route::get('/', function() {
-        return view('transaction/index');
-    })->name('index');
-
-    Route::get('/{id}', function() {
-        return view('transaction/show');
-    })->name('show');
-
-    Route::get('/cart', function() {
-        return view('transaction/cart');
-    })->name('cart');
+Route::group([ 'prefix' => 'transaction', 'as' => 'transaction.' ], function () {
+    Route::get('/', 'TransactionController@index')->name('index');
+    Route::get('/cart', 'TransactionController@cart')->name('cart');
+    Route::get('/{id}', 'TransactionController@show')->name('show');
+    Route::post('/{id}/{qty}', 'TransactionController@update')->name('update');
 });
 
 Route::get('/laravel', function() {
     return view('welcome');
 });
-
-Route::get('/test', function() {
-    return view('account');
-});
-

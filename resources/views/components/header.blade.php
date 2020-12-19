@@ -15,33 +15,39 @@
           Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          {{-- TODO: loop categories --}}
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          @foreach($headercategories as $category)
+            <a class="dropdown-item" href="{{ route('category.show', ['category' => $category->id]) }}">
+              {{ $category->name }}
+            </a>
+          @endforeach
         </div>
       </li>
 
       @auth
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Manager
+            {{ Auth::user()->username }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {{-- TODO --}}
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            @if (Auth::user()->is_admin)
+              <a class="dropdown-item" href="{{ route('flower.create') }}">Add Flower</a>
+              <a class="dropdown-item" href="{{ route('category.index') }}">Manage Categories</a>
+            @else
+              <a class="dropdown-item" href="{{ route('transaction.cart') }}">My Cart</a>
+              <a class="dropdown-item" href="{{ route('transaction.index') }}">Transaction History</a>
+            @endif
+            <a class="dropdown-item" href="{{ route('user.password') }}">Change Password</a>
+            <a class="dropdown-item" href="{{ route('user.logout') }}">Logout</a>
           </div>
         </li>
 
       @else
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('login') }}">Login</a>
+          <a class="nav-link" href="{{ route('user.login') }}">Login</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('register') }}">Register</a>
+          <a class="nav-link" href="{{ route('user.register') }}">Register</a>
         </li>
       @endauth
     </ul>
