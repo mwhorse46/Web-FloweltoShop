@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+  @include('components.error-card')
+
   <div class="container p-3">
     <div class="text-center">
       <h4>Update Category</h4>

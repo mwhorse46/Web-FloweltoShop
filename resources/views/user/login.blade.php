@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+  @include('components.error-card')
+
   <div class="container p-3">
     <div class="h3 text-center">
       Login
@@ -39,16 +41,6 @@
             Login
           </button>
         </div>
-
-        {{-- TODO --}}
-        {{-- <div class="row">
-          <div class="col-xs-0 col-lg-4"></div>
-          <div class="col-xs-12 col-lg-7 pt-1">
-            <a href="#">
-              Forgot Password?
-            </a>
-          </div>
-        </div> --}}
       </form>
     </div>
   </div>

@@ -7,20 +7,18 @@
     </div>
 
     <div class="mt-2 pt-2">
-      <form>
-        <div class="form-row">
-          <div class="form-group">
-            <select name="" class="form-control" id="searchType">
-              <option value="name" selected>Name</option>
-              <option value="price">Price</option>
-            </select>
-          </div>
-          <div class="form-group ml-2 pl-2">
-            <input type="text" class="form-control" id="txtSearch" placeholder="Search">
-          </div>
-          <div class="mx-2 px-2">
-            <button type="submit" class="btn btn-primary">Search</button>
-          </div>
+      <form class="form-row">
+        <div class="form-group">
+          <select name="" class="form-control" id="searchType">
+            <option value="name" selected>Name</option>
+            <option value="price">Price</option>
+          </select>
+        </div>
+        <div class="form-group ml-2 pl-2">
+          <input type="text" class="form-control" id="txtSearch" placeholder="Search">
+        </div>
+        <div class="mx-2 px-2">
+          <button type="submit" class="btn btn-primary">Search</button>
         </div>
       </form>
     </div>

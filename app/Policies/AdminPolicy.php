@@ -15,7 +15,7 @@ class AdminPolicy
      *
      * @return void
      */
-    public function is_admin(User $user) {
-        return $user->is_admin === 1 ? Response::allow() : Response::deny();
+    public function admin(User $user) {
+        return $user->is_admin === true;
     }
 }

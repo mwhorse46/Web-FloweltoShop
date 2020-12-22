@@ -9,7 +9,7 @@ class DetailTransaction extends Model
     protected $table = 'detail_transactions';
 
     protected $fillable = [
-        'image', 'qty', 'price',
+        'qty',
         'transaction_id', 'flower_id',
     ];
 
@@ -18,6 +18,6 @@ class DetailTransaction extends Model
     }
 
     public function flower() {
-        return $this->belongsTo(Flower::class);
+        return $this->belongsTo(Flower::class)->withTrashed();
     }
 }

@@ -6,12 +6,18 @@
       Your Transaction History
     </div>
 
-    <div class="row row-cols-1 mt-3 mx-1 justify-content-center">
-      @for ($i = 0; $i < 3; $i++)
-        <div class="m-1 text-center font-weight-bold">
-          Transaction at 2020-05-11 19:00:00
-        </div>
-      @endfor
+    <div class="container">
+      @foreach ($transactions as $transaction)
+        <a class="row row-cols-1 mt-3 mx-1 justify-content-center text-center font-weight-bold" href="{{ route('transaction.show', ['transaction' => $transaction->id]) }}">
+          Transaction at {{ $transaction->date }}
+        </a>
+      @endforeach
     </div>
+
+    @if (count($transactions) === 0)
+      <div class="h3 text-center font-italic font-weight-normal">
+        Your cart is empty
+      </div>
+    @endif
   </div>
 @endsection

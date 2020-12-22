@@ -15,7 +15,7 @@ class CreateHeaderTransactionsTable extends Migration
     {
         Schema::create('header_transactions', function (Blueprint $table) {
             $table->id();
-            $table->date('date')->nullable();
+            $table->datetime('date')->nullable();
 
             $table->foreignId('user_id')->constrained('users');
 

@@ -7,7 +7,7 @@
         <div class="card-subtitle">Rp {{ $flower->price }}</div>
       </div>
 
-      @can('is_admin', $flower)
+      @can('admin', $flower)
         <div class="card-footer container-fluid">
           <div class="row">
             <form class="col m-1" action="{{ route('flower.destroy', ['flower' => $flower->id]) }}" method="post">

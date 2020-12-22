@@ -23,6 +23,7 @@ class CreateFlowersTable extends Migration
             $table->foreignId('category_id')->constrained('flower_categories');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

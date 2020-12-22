@@ -7,6 +7,7 @@ use App\Rules\MatchPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -27,7 +28,7 @@ class UserController extends Controller
         $user = new User;
         $user->username = $request->username;
         $user->email = $request->email;
-        $user->password = bcrypt($request->password);
+        $user->password = Hash::make($request->password);
         $user->address = $request->address;
         $user->gender = $request->gender;
         $user->dob = $request->dob;
@@ -47,10 +48,8 @@ class UserController extends Controller
             'password' => [ 'required', 'string', 'confirmed', 'min:8' ],
         ]);
 
-        return 'UserController@change: Want to change password of ' . $user->username;
-
         $user = Auth::user();
-        $user->password = bcrypt($request->password);
+        $user->password = Hash::make($request->password);
         $user->save();
 
         return redirect()->back();

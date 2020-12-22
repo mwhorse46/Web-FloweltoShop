@@ -25,7 +25,9 @@ TBA
 
 ## Creative Thinking
 
-  * *TBA*
+  * Use global data sharing on `App/Providers/AppServiceProvider.php@boot`.
+  * Use `SOFT DELETE` to keep data integrity on transaction history page.
+  * Create a lot of view components to prevent duplicate codes.
 
 
 ## Deployment
@@ -33,6 +35,7 @@ TBA
   * Create MySQL database named `floweltoshop` on `127.0.0.1:3306` with `root` username and no password. You can customize the ip address, port, database username or password based on your own machine setup.
   * Run `composer install` to download all dependencies needed.
   * Run `cp .env.example .env && php artisan key:generate` to prepare all important data.
+  * Run `php artisan storage:link` to create symbolic link to public storage directory.
   * Run `php artisan migrate --seed` to create and fill the database.
   * Run `php artisan serve` and access the webapp on localhost port 8000.
 
@@ -46,14 +49,8 @@ Here a list of URLs that had been accessed and (maybe) give some insights to thi
   * [Catatan Laravel :: Upload Image Via Laravel Storage](https://alfinchandra4.medium.com/catatan-laravel-upload-imagevia-laravel-storage-379a1dc9373)
   * [Sharing Data With All Views](https://laravel.com/docs/8.x/views#sharing-data-with-all-views)
   * [Password Validation with Rules](https://www.itsolutionstuff.com/post/laravel-change-password-with-current-password-validation-exampleexample.html)
-  * [Remember Logged-In User](https://laravel.com/docs/7.x/authentication#remembering-users()
-
-
-## Useful Information
-
-(Maybe) Unrelated, but could be related in the future
-
-  * *TBA*
+  * [Remember Logged-In User](https://laravel.com/docs/7.x/authentication#remembering-users)
+  * [Get soft-deleted data with Eloquent](https://laraveldaily.com/belongsto-and-withtrashed-linking-to-deleted-row/)
 
 
 ## Image Resources

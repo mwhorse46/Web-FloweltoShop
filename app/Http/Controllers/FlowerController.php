@@ -25,7 +25,7 @@ class FlowerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $this->authorize('is_admin', Flower::class);
+        $this->authorize('admin', Flower::class);
 
         return view('flower.create', [
             'categories' => FlowerCategory::all(),
@@ -39,6 +39,8 @@ class FlowerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+        $this->authorize('admin', Flower::class);
+
         $this->validate($request, [
             'name' => [ 'required', 'unique:flowers,name', 'min:5' ],
             'price' => [ 'required', 'integer', 'min:50000' ],
@@ -47,8 +49,6 @@ class FlowerController extends Controller
 
             'category_id' => [ 'required' ],
         ]);
-
-        return 'FlowerController@store: Want to create ' . $request->name;
 
         $flower = new Flower;
         $flower->name = $request->name;
@@ -88,7 +88,7 @@ class FlowerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $this->authorize('is_admin', Flower::class);
+        $this->authorize('admin', Flower::class);
 
         return view('flower.edit', [
             'categories' => FlowerCategory::all(),
@@ -104,7 +104,7 @@ class FlowerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        $this->authorize('is_admin', Flower::class);
+        $this->authorize('admin', Flower::class);
 
         $this->validate($request, [
             'name' => [ 'required', 'unique:flowers,name', 'min:5' ],
@@ -113,8 +113,6 @@ class FlowerController extends Controller
 
             'category_id' => [ 'required' ],
         ]);
-
-        return 'FlowerController@update: Want to update ' . $id;
 
         $flower = Flower::find($id);
         $flower->name = $request->name;
@@ -142,9 +140,7 @@ class FlowerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $this->authorize('is_admin', Flower::class);
-
-        return 'FlowerController@destroy: Want to delete ' . $id;
+        $this->authorize('admin', Flower::class);
 
         Flower::destroy($id);
         return redirect()->back();

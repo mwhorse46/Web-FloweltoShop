@@ -7,7 +7,7 @@
       </div>
 
       @isset($manage)
-        @can('is_admin', $category)
+        @can('admin', $category)
           <div class="card-footer container-fluid">
             <div class="row">
               <form class="col m-1" action="{{ route('category.destroy', ['category' => $category->id]) }}" method="post">

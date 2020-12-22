@@ -19,6 +19,7 @@ class CreateFlowerCategoriesTable extends Migration
             $table->text('image');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

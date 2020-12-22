@@ -32,13 +32,18 @@ Route::group([ 'prefix' => 'user', 'middleware' => 'auth' ], function() {
 Route::resource('/category', 'FlowerCategoryController');
 Route::resource('/flower', 'FlowerController');
 
-Route::group([ 'prefix' => 'transaction', 'as' => 'transaction.' ], function () {
+Route::group([
+    'prefix' => 'transaction',
+    'as' => 'transaction.',
+    'middleware' => 'auth',
+], function () {
     Route::get('/', 'TransactionController@index')->name('index');
     Route::get('/cart', 'TransactionController@cart')->name('cart');
-    Route::get('/{id}', 'TransactionController@show')->name('show');
-    Route::post('/{id}/{qty}', 'TransactionController@update')->name('update');
+    Route::post('/update', 'TransactionController@update')->name('update');
+    Route::post('/checkout', 'TransactionController@checkout')->name('checkout');
+    Route::get('/{transaction}', 'TransactionController@show')->name('show');
 });
 
-Route::get('/laravel', function() {
-    return view('welcome');
-});
+// Route::get('/laravel', function() {
+//     return view('welcome');
+// });

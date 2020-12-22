@@ -15,15 +15,10 @@ class CreateDetailTransactionsTable extends Migration
     {
         Schema::create('detail_transactions', function (Blueprint $table) {
             $table->id();
-            $table->text('image');
             $table->integer('qty');
-            $table->integer('price');
 
-            $table->foreignId('transactions_id')->constrained('header_transactions');
-            $table->foreignId('flower_id')
-                ->nullable()
-                ->constrained('flowers')
-                ->onDelete('set null');
+            $table->foreignId('transaction_id')->constrained('header_transactions');
+            $table->foreignId('flower_id')->constrained('flowers');
 
             $table->timestamps();
         });

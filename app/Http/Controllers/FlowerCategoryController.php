@@ -15,7 +15,7 @@ class FlowerCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $this->authorize('is_admin', FlowerCategory::class);
+        $this->authorize('admin', FlowerCategory::class);
 
         return view('category.index', [
             'categories' => FlowerCategory::all(),
@@ -50,7 +50,7 @@ class FlowerCategoryController extends Controller
     public function show($id) {
         return view('category.show', [
             'category' => FlowerCategory::find($id),
-            'flowers' => Flower::where('category_id', '=', $id)->paginate(8),
+            'flowers' => Flower::where('category_id', $id)->paginate(8),
         ]);
     }
 
@@ -61,7 +61,7 @@ class FlowerCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $this->authorize('is_admin', FlowerCategory::class);
+        $this->authorize('admin', FlowerCategory::class);
 
         return view('category.edit', [
             'category' => FlowerCategory::find($id),
@@ -76,13 +76,11 @@ class FlowerCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        $this->authorize('is_admin', FlowerCategory::class);
+        $this->authorize('admin', FlowerCategory::class);
 
         $this->validate($request, [
             'name' => [ 'required', 'unique:flower_categories,name', 'min:5' ],
         ]);
-
-        // return 'FlowerCategoryController@update: Want to update ' . $id;
 
         $category = FlowerCategory::find($id);
         $category->name = $request->name;
@@ -107,10 +105,9 @@ class FlowerCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $this->authorize('is_admin', FlowerCategory::class);
+        $this->authorize('admin', FlowerCategory::class);
 
-        return 'FlowerCategoryController@destroy: Want to delete ' . $id;
-
+        FlowerCategory::find($id)->flowers()->delete();
         FlowerCategory::destroy($id);
         return redirect()->back();
     }
