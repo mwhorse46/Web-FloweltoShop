@@ -9,7 +9,7 @@
     </div>
     <div class="row mt-2 pt-2 px-2">
       <div class="col-xs-12 col-md-3 mb-2">
-        <img src="{{ Storage::url($category->image) }}" alt="NO IMAGE">
+        <img src="{{ Storage::url($category->image) }}" class="img-fluid" alt="NO IMAGE">
       </div>
       <form class="col-xs-12 col-md-9" enctype="multipart/form-data" action="{{ route('category.update', ['category' => $category->id]) }}" method="post">
         @csrf

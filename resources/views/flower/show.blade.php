@@ -6,7 +6,7 @@
   <div class="container p-3">
     <div class="row mt-2 pt-2 px-2">
       <div class="col-xs-12 col-md-3 mb-2">
-        <img src="{{ Storage::url($flower->image) }}" alt="NO IMAGE">
+        <img src="{{ Storage::url($flower->image) }}" class="img-fluid" alt="NO IMAGE">
       </div>
       <div class="col-xs-12 col-md-9">
         <div class="h3">{{ $flower->name }}</div>

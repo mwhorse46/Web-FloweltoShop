@@ -20,7 +20,7 @@
 <script src="{{ asset('js/app.js') }}" crossorigin="anonymous"></script>
 
 <body style="background-color: pink;">
-  <x-header />
+  @include('components.header', [ 'headercategories' => $headercategories ])
 
   @yield('content')
 

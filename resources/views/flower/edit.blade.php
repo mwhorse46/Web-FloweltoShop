@@ -9,7 +9,7 @@
     </div>
     <div class="row mt-2 pt-2">
       <div class="d-flex col-xs-12 col-lg-3 mb-2 align-self-center justify-content-center">
-        <img src="{{ Storage::url($flower->image) }}" alt="NO IMAGE">
+        <img src="{{ Storage::url($flower->image) }}" class="img-fluid" alt="NO IMAGE">
       </div>
       <form class="col-xs-12 col-lg-9" enctype="multipart/form-data" action="{{ route('flower.update', ['flower' => $flower->id]) }}" method="post">
         @csrf

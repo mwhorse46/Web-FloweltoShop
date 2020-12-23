@@ -28,5 +28,9 @@
         @include('components.flower-card', [ 'flower' => $flower ])
       @endforeach
     </div>
+
+    <div class="d-flex justify-content-center">
+      {{ $flowers->links() }}
+    </div>
   </div>
 @endsection
