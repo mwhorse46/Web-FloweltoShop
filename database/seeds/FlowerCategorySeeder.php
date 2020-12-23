@@ -12,23 +12,18 @@ class FlowerCategorySeeder extends Seeder
     public function run()
     {
         DB::table('flower_categories')->insert([
-            'name' => 'Hand Bouquet (gift)',
-            'image' => 'random.jpg',
+            'name' => 'Bridal',
+            'image' => 'public/images/1603369913-bridal.jpg',
         ]);
 
         DB::table('flower_categories')->insert([
-            'name' => 'Wedding Bouquet',
-            'image' => 'random.jpg',
+            'name' => 'Christmas',
+            'image' => 'public/images/1603369913-christmas.jpg',
         ]);
 
         DB::table('flower_categories')->insert([
-            'name' => 'Table Arrangement',
-            'image' => 'random.jpg',
-        ]);
-
-        DB::table('flower_categories')->insert([
-            'name' => 'Couple Bouquet',
-            'image' => 'random.jpg',
+            'name' => 'Hamper',
+            'image' => 'public/images/1603369913-hamper.jpg',
         ]);
     }
 }
