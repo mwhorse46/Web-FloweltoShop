@@ -1,6 +1,6 @@
 # Web-FloweltoShop
 
-TBA
+**Flowelto Shop** is a website to find information about Flowelto Shop's products and order it. There are three types of user's role in this website: Manager (Admin), Customer, and Guest (non-logged-in user). The manager can manage the products sold on the website, the customer can look at the information and purchase the products, while the guest can only look at the information of the products.
 
 
 ## Contributors
@@ -25,7 +25,6 @@ TBA
 
 ## Creative Thinking
 
-  * Use global data sharing on `App/Providers/AppServiceProvider.php@boot`.
   * Use `SOFT DELETE` to keep data integrity on transaction history page.
   * Create a lot of view components to prevent duplicate codes.
 
@@ -47,7 +46,6 @@ Here a list of URLs that had been accessed and (maybe) give some insights to thi
   * [Laravel Blade Documentation](https://laravel.com/docs/7.x/blade)
   * [Inline Radio Button](https://stackoverflow.com/questions/49797169/multiple-radio-buttons-on-one-line-bootstrap-4/49797531)
   * [Catatan Laravel :: Upload Image Via Laravel Storage](https://alfinchandra4.medium.com/catatan-laravel-upload-imagevia-laravel-storage-379a1dc9373)
-  * [Sharing Data With All Views](https://laravel.com/docs/8.x/views#sharing-data-with-all-views)
   * [Password Validation with Rules](https://www.itsolutionstuff.com/post/laravel-change-password-with-current-password-validation-exampleexample.html)
   * [Remember Logged-In User](https://laravel.com/docs/7.x/authentication#remembering-users)
   * [Get soft-deleted data with Eloquent](https://laraveldaily.com/belongsto-and-withtrashed-linking-to-deleted-row/)
