@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DetailTransaction;
+use App\FlowerCategory;
 use App\HeaderTransaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,7 @@ class TransactionController extends Controller
             ->get();
 
         return view('transaction.index', [
+            'headercategories' => FlowerCategory::all(),
             'transactions' => $transactions,
         ]);
     }
@@ -25,6 +27,7 @@ class TransactionController extends Controller
         $this->authorize('customer', HeaderTransaction::class);
 
         return view('transaction.show', [
+            'headercategories' => FlowerCategory::all(),
             'items' => HeaderTransaction::find($id)->items,
         ]);
     }
@@ -33,6 +36,7 @@ class TransactionController extends Controller
         $this->authorize('customer', HeaderTransaction::class);
 
         return view('transaction.cart', [
+            'headercategories' => FlowerCategory::all(),
             'items' => HeaderTransaction::find($this->findCartId())->items,
         ]);
     }

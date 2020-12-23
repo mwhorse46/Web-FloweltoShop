@@ -18,6 +18,7 @@ class FlowerCategoryController extends Controller
         $this->authorize('admin', FlowerCategory::class);
 
         return view('category.index', [
+            'headercategories' => FlowerCategory::all(),
             'categories' => FlowerCategory::all(),
         ]);
     }
@@ -49,6 +50,7 @@ class FlowerCategoryController extends Controller
      */
     public function show($id) {
         return view('category.show', [
+            'headercategories' => FlowerCategory::all(),
             'category' => FlowerCategory::find($id),
             'flowers' => Flower::where('category_id', $id)->paginate(8),
         ]);
@@ -64,6 +66,7 @@ class FlowerCategoryController extends Controller
         $this->authorize('admin', FlowerCategory::class);
 
         return view('category.edit', [
+            'headercategories' => FlowerCategory::all(),
             'category' => FlowerCategory::find($id),
         ]);
     }

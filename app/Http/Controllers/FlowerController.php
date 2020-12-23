@@ -28,6 +28,7 @@ class FlowerController extends Controller
         $this->authorize('admin', Flower::class);
 
         return view('flower.create', [
+            'headercategories' => FlowerCategory::all(),
             'categories' => FlowerCategory::all(),
         ]);
     }
@@ -77,6 +78,7 @@ class FlowerController extends Controller
      */
     public function show($id) {
         return view('flower.show', [
+            'headercategories' => FlowerCategory::all(),
             'flower' => Flower::find($id),
         ]);
     }
@@ -91,6 +93,7 @@ class FlowerController extends Controller
         $this->authorize('admin', Flower::class);
 
         return view('flower.edit', [
+            'headercategories' => FlowerCategory::all(),
             'categories' => FlowerCategory::all(),
             'flower' => Flower::find($id),
         ]);

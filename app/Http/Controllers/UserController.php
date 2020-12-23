@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FlowerCategory;
 use App\User;
 use App\Rules\MatchPassword;
 use Illuminate\Http\Request;
@@ -12,7 +13,9 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function showRegisterForm() {
-        return view('user.register');
+        return view('user.register', [
+            'headercategories' => FlowerCategory::all(),
+        ]);
     }
 
     public function register(Request $request) {
@@ -39,7 +42,9 @@ class UserController extends Controller
     }
 
     public function showPasswordForm() {
-        return view('user.account');
+        return view('user.account', [
+            'headercategories' => FlowerCategory::all(),
+        ]);
     }
 
     public function change(Request $request) {
@@ -56,7 +61,9 @@ class UserController extends Controller
     }
 
     public function showLoginForm() {
-        return view('user.login');
+        return view('user.login', [
+            'headercategories' => FlowerCategory::all(),
+        ]);
     }
 
     public function login(Request $request) {

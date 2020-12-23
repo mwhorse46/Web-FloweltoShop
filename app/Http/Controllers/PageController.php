@@ -9,6 +9,7 @@ class PageController extends Controller
 {
     public function home() {
         return view('home', [
+            'headercategories' => FlowerCategory::all(),
             'categories' => FlowerCategory::all(),
         ]);
     }
