@@ -32,6 +32,8 @@ Route::group([ 'prefix' => 'user', 'middleware' => 'auth' ], function() {
 Route::resource('/category', 'FlowerCategoryController');
 Route::resource('/flower', 'FlowerController');
 
+Route::post('/category/{category}/filter', 'FlowerCategoryController@filter')->name('category.filter');
+
 Route::group([
     'prefix' => 'transaction',
     'as' => 'transaction.',

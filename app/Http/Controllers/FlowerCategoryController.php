@@ -56,6 +56,18 @@ class FlowerCategoryController extends Controller
         ]);
     }
 
+    public function filter(Request $request, $id) {
+        $flowers = Flower::where('category_id', $id)
+            ->where($request->filterType, 'like', '%' . $request->queryText . '%')
+            ->paginate(8);
+
+        return view('category.show', [
+            'headercategories' => FlowerCategory::all(),
+            'category' => FlowerCategory::find($id),
+            'flowers' => $flowers,
+        ]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
